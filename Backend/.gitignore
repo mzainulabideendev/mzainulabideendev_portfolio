@@ -55,8 +55,5 @@ appsettings.Production.json
 # Node.js
 node_modules/
 
-# Migration backup files
-Migrations/
-
 # Backup files
 *.bak
