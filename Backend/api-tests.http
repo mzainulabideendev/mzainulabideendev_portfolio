@@ -1,0 +1,191 @@
+### Portfolio API Test Requests
+### Note: Registration is disabled. Use default admin credentials.
+### Username: your-admin-username | Password: your-admin-password | Email: admin@example.com
+@baseUrl = https://localhost:7XXX
+@token = your_jwt_token_here
+
+### 1. Login (Default Admin)
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "your-admin-username",
+  "password": "your-admin-password"
+}
+
+### 3. Create Bio (Authenticated)
+POST {{baseUrl}}/api/bio
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "John Doe",
+  "title": "Full Stack Developer",
+  "description": "Passionate developer with 5+ years of experience in building web applications",
+  "profileImageUrl": "https://example.com/profile.jpg",
+  "email": "john@example.com",
+  "phone": "+1234567890",
+  "linkedInUrl": "https://linkedin.com/in/johndoe",
+  "githubUrl": "https://github.com/johndoe",
+  "twitterUrl": "https://twitter.com/johndoe"
+}
+
+### 3. Get Bio (Public)
+GET {{baseUrl}}/api/bio
+
+### 5. Update Bio (Authenticated)
+PUT {{baseUrl}}/api/bio
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "John Doe",
+  "title": "Senior Full Stack Developer",
+  "description": "Experienced developer specializing in .NET and React",
+  "profileImageUrl": "https://example.com/profile.jpg",
+  "email": "john@example.com",
+  "phone": "+1234567890",
+  "linkedInUrl": "https://linkedin.com/in/johndoe",
+  "githubUrl": "https://github.com/johndoe",
+  "twitterUrl": "https://twitter.com/johndoe"
+}
+
+### 6. Create Project (Authenticated)
+POST {{baseUrl}}/api/projects
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "E-Commerce Platform",
+  "description": "Full-featured e-commerce platform with payment integration",
+  "imageUrl": "https://example.com/ecommerce.jpg",
+  "technologiesUsed": "ASP.NET Core, React, SQL Server, Stripe",
+  "projectUrl": "https://myecommerce.com",
+  "githubUrl": "https://github.com/username/ecommerce"
+}
+
+### 7. Get All Projects (Public)
+GET {{baseUrl}}/api/projects
+
+### 8. Get Project by ID (Public)
+GET {{baseUrl}}/api/projects/1
+
+### 9. Update Project (Authenticated)
+PUT {{baseUrl}}/api/projects/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "E-Commerce Platform Updated",
+  "description": "Updated description with new features",
+  "imageUrl": "https://example.com/ecommerce-new.jpg",
+  "technologiesUsed": "ASP.NET Core, React, SQL Server, Stripe, Redis",
+  "projectUrl": "https://myecommerce.com",
+  "githubUrl": "https://github.com/username/ecommerce"
+}
+
+### 10. Delete Project (Authenticated)
+DELETE {{baseUrl}}/api/projects/1
+Authorization: Bearer {{token}}
+
+### 11. Create Book (Authenticated)
+POST {{baseUrl}}/api/books
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "description": "A Handbook of Agile Software Craftsmanship",
+  "coverImageUrl": "https://example.com/cleancode.jpg",
+  "amazonUrl": "https://amazon.com/clean-code",
+  "rating": 5
+}
+
+### 12. Get All Books (Public)
+GET {{baseUrl}}/api/books
+
+### 13. Get Book by ID (Public)
+GET {{baseUrl}}/api/books/1
+
+### 14. Update Book (Authenticated)
+PUT {{baseUrl}}/api/books/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "description": "Updated description",
+  "coverImageUrl": "https://example.com/cleancode.jpg",
+  "amazonUrl": "https://amazon.com/clean-code",
+  "rating": 5
+}
+
+### 15. Delete Book (Authenticated)
+DELETE {{baseUrl}}/api/books/1
+Authorization: Bearer {{token}}
+
+### 16. Submit Contact Form (Public)
+POST {{baseUrl}}/api/contact
+Content-Type: application/json
+
+{
+  "name": "Jane Smith",
+  "email": "jane@example.com",
+  "subject": "Project Inquiry",
+  "message": "I would like to discuss a potential project collaboration."
+}
+
+### 17. Get All Contact Messages (Authenticated)
+GET {{baseUrl}}/api/contact
+Authorization: Bearer {{token}}
+
+### 18. Get Contact Message by ID (Authenticated)
+GET {{baseUrl}}/api/contact/1
+Authorization: Bearer {{token}}
+
+### 19. Mark Contact Message as Read (Authenticated)
+PUT {{baseUrl}}/api/contact/1/read
+Authorization: Bearer {{token}}
+
+### 20. Delete Contact Message (Authenticated)
+DELETE {{baseUrl}}/api/contact/1
+Authorization: Bearer {{token}}
+
+### 21. Create Picture (Authenticated)
+POST {{baseUrl}}/api/pictures
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Dashboard Screenshot",
+  "imageUrl": "https://example.com/dashboard.jpg",
+  "description": "Main dashboard of the e-commerce platform",
+  "category": "web-development"
+}
+
+### 22. Get All Pictures (Public)
+GET {{baseUrl}}/api/pictures
+
+### 23. Get Pictures by Category (Public)
+GET {{baseUrl}}/api/pictures?category=web-development
+
+### 24. Get Picture by ID (Public)
+GET {{baseUrl}}/api/pictures/1
+
+### 25. Update Picture (Authenticated)
+PUT {{baseUrl}}/api/pictures/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Updated Dashboard Screenshot",
+  "imageUrl": "https://example.com/dashboard-v2.jpg",
+  "description": "Updated main dashboard",
+  "category": "web-development"
+}
+
+### 26. Delete Picture (Authenticated)
+DELETE {{baseUrl}}/api/pictures/1
+Authorization: Bearer {{token}}

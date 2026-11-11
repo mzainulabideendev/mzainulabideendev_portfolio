@@ -1,0 +1,130 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+
+  @include mobile {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.login-header {
+  margin-bottom: 2.5rem;
+
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 0.5rem;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.input-wrapper {
+  position: relative;
+
+  input {
+    width: 100%;
+    padding: 1rem 0 0.5rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-bottom-color: var(--accent);
+    }
+
+    &:focus ~ label,
+    &:not(:placeholder-shown) ~ label {
+      top: -4px;
+      font-size: 0.72rem;
+      color: var(--accent);
+    }
+
+    &:focus ~ .input-line {
+      width: 100%;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 0.75rem;
+    left: 0;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: all 0.3s;
+  }
+
+  .input-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s;
+  }
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--accent);
+  }
+
+  i { margin-right: 0.4rem; }
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

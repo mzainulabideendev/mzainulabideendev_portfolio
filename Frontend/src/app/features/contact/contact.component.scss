@@ -1,0 +1,98 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.contact-section {
+  background: transparent;
+}
+
+.contact-form {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @include mobile {
+    padding: 1.5rem;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper {
+  position: relative;
+
+  input, textarea {
+    width: 100%;
+    padding: 1rem 0 0.5rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.3s;
+    resize: none;
+
+    &:focus {
+      border-bottom-color: var(--accent);
+    }
+
+    &:focus ~ label,
+    &:not(:placeholder-shown) ~ label {
+      top: -4px;
+      font-size: 0.72rem;
+      color: var(--accent);
+    }
+
+    &:focus ~ .input-line {
+      width: 100%;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 0.75rem;
+    left: 0;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: all 0.3s;
+  }
+
+  .input-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s;
+  }
+}
+
+.error-msg {
+  color: #ff4757;
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

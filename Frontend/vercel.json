@@ -1,0 +1,8 @@
+{
+  "buildCommand": "npx ng build --configuration production",
+  "outputDirectory": "dist/portfolio-ui/browser",
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "http://zainportfilo.runasp.net/api/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

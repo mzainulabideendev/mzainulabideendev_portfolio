@@ -1,0 +1,22 @@
+# Dependencies and generated frontend output
+Frontend/node_modules/
+Frontend/.angular/
+Frontend/dist/
+
+# Generated backend output
+Backend/bin/
+Backend/obj/
+
+# Local configuration and secrets
+**/appsettings.json
+**/appsettings.Development.json
+**/appsettings.Production.json
+**/.env
+**/.env.*
+
+# IDE and temporary files
+.vs/
+.idea/
+*.user
+*.suo
+*.tmp

@@ -1,0 +1,37 @@
+@import 'variables';
+
+@mixin mobile {
+  @media (max-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin glass {
+  background: $glass-bg;
+  backdrop-filter: blur($glass-blur);
+  -webkit-backdrop-filter: blur($glass-blur);
+  border: 1px solid $glass-border;
+}
+
+@mixin gradient-text {
+  background: linear-gradient(135deg, $accent, $accent-light, $accent-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin glow($color: $accent, $size: 20px) {
+  box-shadow: 0 0 $size rgba($color, 0.3);
+}

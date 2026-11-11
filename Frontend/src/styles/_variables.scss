@@ -1,0 +1,40 @@
+// ─── Color Palette ───
+$bg-primary: #0f0c29;
+$bg-secondary: #302b63;
+$bg-tertiary: #24243e;
+
+$accent: #6c63ff;
+$accent-light: #a855f7;
+$accent-pink: #ec4899;
+$accent-rgb: 108, 99, 255;
+
+$text-primary: #ffffff;
+$text-secondary: rgba(255, 255, 255, 0.7);
+$text-muted: rgba(255, 255, 255, 0.45);
+
+$success: #10b981;
+$error: #ef4444;
+$warning: #f59e0b;
+
+// ─── Glass Effect ───
+$glass-bg: rgba(255, 255, 255, 0.04);
+$glass-border: rgba(255, 255, 255, 0.08);
+$glass-blur: 20px;
+
+// ─── Typography ───
+$font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-heading: 'Space Grotesk', sans-serif;
+
+// ─── Spacing ───
+$section-padding: 6rem 0;
+$container-max: 1200px;
+
+// ─── Breakpoints ───
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// ─── Transition ───
+$transition-smooth: cubic-bezier(0.35, 0, 0.25, 1);
+$transition-bounce: cubic-bezier(0.25, 0.46, 0.45, 0.94);
