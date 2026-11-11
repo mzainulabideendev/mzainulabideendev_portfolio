@@ -11,7 +11,7 @@ Personal portfolio website and content-management API.
 
 ![Screenshot of the live portfolio homepage](docs/images/portfolio-home.png)
 
-The screenshot is a mobile-sized capture of the live website.
+The screenshot shows the live homepage in a desktop browser layout.
 
 ## Contents
 
